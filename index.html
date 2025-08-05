@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswin P D - Web Designer | UI/UX Designer | Graphic Designer</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#2563EB',secondary:'#F97316'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body { font-family: 'Inter', sans-serif; }
+        .particles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        }
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        .skill-icon:hover {
+            transform: scale(1.1);
+            color: #2563EB;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #2563EB;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563EB, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white overflow-x-hidden">
+    <div class="particles-bg" id="particles"></div>
+    
+    <nav class="fixed top-0 w-full bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold gradient-text">Aswin P D</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+                <a href="#certificates" class="nav-link text-gray-300 hover:text-white">Certificates</a>
+                <a href="#resume" class="nav-link text-gray-300 hover:text-white">Resume</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+            </div>
+            <button class="md:hidden w-8 h-8 flex items-center justify-center" id="mobile-menu-btn">
+                <i class="ri-menu-line text-xl"></i>
+            </button>
+        </div>
+        <div class="md:hidden bg-slate-800 border-t border-slate-700 hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="block text-gray-300 hover:text-white">About</a>
+                <a href="#projects" class="block text-gray-300 hover:text-white">Projects</a>
+                <a href="#certificates" class="block text-gray-300 hover:text-white">Certificates</a>
+                <a href="#resume" class="block text-gray-300 hover:text-white">Resume</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="min-h-screen flex items-center justify-center relative px-6">
+        <div class="text-center max-w-4xl mx-auto reveal">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 gradient-text">Aswin P D</h1>
+            <h2 class="text-2xl md:text-3xl text-gray-300 mb-8">Web Designer | UI/UX Designer | Graphic Designer</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Crafting digital experiences that blend creativity with functionality. I transform ideas into visually stunning and user-friendly designs that make an impact.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-primary hover:bg-blue-600 text-white px-8 py-4 !rounded-button font-semibold transition-all duration-300 whitespace-nowrap">
+                    View My Work
+                </a>
+                <a href="#contact" class="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-4 !rounded-button font-semibold transition-all duration-300 whitespace-nowrap">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="ri-arrow-down-line text-2xl text-gray-400"></i>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="w-80 h-80 mx-auto bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
+                        <img src="img/" alt="Aswin P D" class="w-72 h-72 rounded-xl object-cover object-top">
+                    </div>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">Creative Designer & Problem Solver</h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        I'm a passionate designer who believes in the power of great design to solve problems and
+                         create meaningful connections. With expertise spanning Web design, UI/UX, Graphic design, 
+                         and a growing skill set in Artificial Intelligence (AI), I bring a holistic approach to every project.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                       My journey started with a fascination for how design can influence user behavior and create memorable 
+                        experiences. While currently pursuing my studies, I actively work on real-world design projects and 
+                        explore AI technologies. I help businesses and individuals bring their digital visions to life through 
+                        thoughtful, user-centered, and future-ready design solutions.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-20 reveal">
+                <h3 class="text-3xl font-bold text-center mb-12">Skills & Tools</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-html5-line text-2xl text-orange-500"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">HTML5</p>
+                    </div>
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-css3-line text-2xl text-blue-500"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">CSS3</p>
+                    </div>
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-bootstrap-line text-2xl text-purple-500"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">Bootstrap</p>
+                    </div>
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-pencil-ruler-2-line text-2xl text-pink-500"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">Figma</p>
+                    </div>
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-image-edit-line text-2xl text-blue-600"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">Photoshop</p>
+                    </div>
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-palette-line text-2xl text-yellow-500"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">Illustrator</p>
+                    </div>
+                    <div class="text-center skill-icon">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="ri-movie-line text-2xl text-red-500"></i>
+                        </div>
+                        <p class="text-sm text-gray-300">Premiere Pro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">My Projects</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Explore my portfolio of web designs, mobile apps, and creative graphics that showcase my passion for innovative digital solutions.
+                </p>
+            </div>
+            <div class="flex justify-center mb-12 reveal">
+                <div class="bg-slate-700 p-1 rounded-full">
+                    <button class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 filter-btn active" data-filter="all">
+                        All Projects
+                    </button>
+                    <button class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 filter-btn" data-filter="web">
+                        Web Design
+                    </button>
+                    <button class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 filter-btn" data-filter="app">
+                        App Design
+                    </button>
+                    <button class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 filter-btn" data-filter="social">
+                        Social Media
+                    </button>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden project-item" data-category="web">
+                    <div class="relative group">
+                        <img src="img/marx.jpg" alt="Digital Marketing Website" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Digital Marketing Platform</h3>
+                        <p class="text-gray-400 text-sm mb-4">Responsive Digital Marketing website with modern UI/UX Design and seemless user<br>experience.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">UI/UX</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden project-item" data-category="app">
+                    <div class="relative group">
+                        <img src="img/app.jpg" alt="Students App" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Students Tracking App</h3>
+                        <p class="text-gray-400 text-sm mb-4">Intuitive mobile app design for tracking studies, schoolbus, and notifications with personalized insights.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-xs">User Research</span>
+                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-xs">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden project-item" data-category="web">
+                    <div class="relative group">
+                        <img src="img/Roofing.jpg" alt="Construction company website" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Construction company website</h3>
+                        <p class="text-gray-400 text-sm mb-4">Professional Roofing and siding service company website with modern design and optimized performance.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">HTML/CSS</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Bootstrap</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden project-item" data-category="web">
+                    <div class="relative group">
+                        <img src="img/hotel.jpg" alt="Hotel Website" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Hotels Booking Website</h3>
+                        <p class="text-gray-400 text-sm mb-4">Professional Hotel booking website with modern design, showcasing services and prices.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">UI/UX</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden project-item" data-category="web">
+                    <div class="relative group">
+                        <img src="img/gym.jpg" alt="GYM Website" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">GYM Service Website</h3>
+                        <p class="text-gray-400 text-sm mb-4">User-friendly GYM Equipment service website with seemless service experience.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">HTML/CSS</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Bootstrap</span>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">User Research</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden project-item" data-category="social">
+                    <div class="relative group">
+                        <img src="img/social.jpg" alt="Social Posters" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Social Media Posters</h3>
+                        <p class="text-gray-400 text-sm mb-4">Elegant social media content design posters for different business firms as per their needs.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">Photoshop</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">Illustrator</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">Typography</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certificates" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Certificates & Awards</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Recognition and certifications that validate my expertise and commitment to continuous learning in design and development.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                <div class="bg-slate-800 rounded-2xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                        <i class="ri-award-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Graphics & UI/UX Design</h3>
+                    <p class="text-gray-400 text-sm mb-3">The Kreative Academy</p>
+                    <p class="text-secondary text-xs">Completed 2023</p>
+                </div>
+                <div class="bg-slate-800 rounded-2xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                        <i class="ri-medal-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Loading...</h3>
+                    <p class="text-gray-400 text-sm mb-3">Loading...</p>
+                    <p class="text-secondary text-xs">Loading...</p>
+                </div>
+                <div class="bg-slate-800 rounded-2xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                        <i class="ri-trophy-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Loading...</h3>
+                    <p class="text-gray-400 text-sm mb-3">Loading...</p>
+                    <p class="text-secondary text-xs">Loading...</p>
+                </div>
+                <div class="bg-slate-800 rounded-2xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                        <i class="ri-star-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Loading...</h3>
+                    <p class="text-gray-400 text-sm mb-3">Loading...</p>
+                    <p class="text-secondary text-xs">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="py-20 px-6 bg-slate-800/50">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Resume</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                    Download my complete resume to learn more about my experience, skills, and professional journey in design and development.
+                </p>
+                <div class="bg-slate-800 rounded-2xl p-8 mb-8">
+                    <div class="grid md:grid-cols-3 gap-8 text-left">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-primary">Experience</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium">Web Designer - Python & AI - Intern</h4>
+                                    <p class="text-sm text-gray-400">DC Infotec (7th June 2025-Present)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Social Media Graphic Designer</h4>
+                                    <p class="text-sm text-gray-400">Freelance (2023-Present)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Graphic & UI/UX Designer - Intern</h4>
+                                    <p class="text-sm text-gray-400">Kreative Sparkz (13th July 2023-13th October 2023)</p>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-primary">Education</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium">Web Design - Python & AI</h4>
+                                    <p class="text-sm text-gray-400">DC Infotec (2025)</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-medium">Graphic & UI/UX Design</h4>
+                                    <p class="text-sm text-gray-400">The Kreative Academy (2023)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">BA Visual Communication</h4>
+                                    <p class="text-sm text-gray-400">Oriental School of Hotel Management (2020-2023)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-primary">Key Skills</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-sm">UI/UX Design</span>
+                                    <span class="text-sm text-secondary">95%</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm">Web Development</span>
+                                    <span class="text-sm text-secondary">90%</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm">Graphic Design</span>
+                                    <span class="text-sm text-secondary">85%</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="resume pdf/Aswin PD - Resume.pdf">
+                <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 !rounded-button font-semibold transition-all duration-300 whitespace-nowrap inline-flex items-center gap-3">
+                    Download Resume PDF
+                </a>   
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Ready to bring your ideas to life? Let's collaborate and create something amazing together. I'm always excited to work on new projects.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <h3 class="text-2xl font-semibold mb-6">Let's Talk</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                                <i class="ri-mail-line text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email</p>
+                                <p class="text-white">aswinpd014@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                                <i class="ri-phone-line text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Phone</p>
+                                <p class="text-white">+91 8281302558</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                                <i class="ri-map-pin-line text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Location</p>
+                                <p class="text-white">Kerala, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                        <div class="flex gap-4">
+                            <a href="https://www.behance.net/aswindileepk1" class="w-12 h-12 bg-slate-800 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300">
+                                <i class="ri-behance-line text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/aswin-pd-0915102a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="w-12 h-12 bg-slate-800 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300">
+                                <i class="ri-linkedin-line text-xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/pd._.__?igsh=eGFqcTc4emtqb2Vt&utm_source=qr" class="w-12 h-12 bg-slate-800 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300">
+                                <i class="ri-instagram-line text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full bg-slate-800 border-none rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full bg-slate-800 border-none rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Subject" class="w-full bg-slate-800 border-none rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <textarea rows="5" placeholder="Your Message" class="w-full bg-slate-800 border-none rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white py-4 !rounded-button font-semibold transition-all duration-300 whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-400">&copy; 2025 Aswin P D. All rights reserved. Designed with passion and creativity.</p>
+        </div>
+    </footer>
+
+    <script id="particles-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 4 + 2;
+                const startX = Math.random() * window.innerWidth;
+                const duration = Math.random() * 15 + 10;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = startX + 'px';
+                particle.style.animationDuration = duration + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                particlesContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, (duration + 5) * 1000);
+            }
+            
+            setInterval(createParticle, 300);
+        });
+    </script>
+
+    <script id="scroll-reveal">
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+        });
+    </script>
+
+    <script id="navigation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="project-filter">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white'));
+                    btn.classList.add('active', 'bg-primary', 'text-white');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    projectItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            filterBtns[0].classList.add('active', 'bg-primary', 'text-white');
+        });
+    </script>
+</body>
+</html>
